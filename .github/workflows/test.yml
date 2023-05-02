@@ -44,6 +44,12 @@ jobs:
           which migrate
       - name: Run Migrations
         run: make migrateup
+
+      - name: Verify dependencies
+        run: go mod verify
+
+      - name: Build
+        run: go build -v ./...
       
       - name: Test
         run: make test
